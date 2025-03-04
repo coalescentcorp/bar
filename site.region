@@ -10,6 +10,11 @@
   </head>
   {.if template.mobileStylesEnabled}{.or}<!-- Mobile Styles Disabled -->{.end}
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}{.section website}{.if logoImageUrl} logo-image{.end}{.end}{.section collection}{.equal? typeName "index"}{.section collections}{.section 0}{.equal? typeName "gallery"} has-banner-image{.end}{.equal? typeName "page"}{.background-source-video?} has-banner-image index-page{.or}{.main-image?} has-banner-image index-page{.end}{.end}{.end}{.equal? typeName "album"}{.background-source-video?} has-banner-image index-page{.or}{.main-image?} has-banner-image index-page{.end}{.end}{.end}{.end}{.end}{.or}{.background-source-video?} has-banner-image general-page{.or}{.main-image?} has-banner-image general-page{.end}{.end}{.end}{.end}{.if authorFilter} filter-author{.end}{.if tagFilter} filter-tag{.end}{.if categoryFilter} filter-category{.end}{.section collection} collection-{urlId|slugify}{.end}">
+   
+    <!-- Test -->
+    <p>Hello, World!!</p>
+
+
 
     <div id="site">
 
@@ -56,6 +61,7 @@
                 </div>
               {.or}
                 {.if mainImage}
+                
                   <div class="banner-thumbnail-wrapper">
                   {.section mainImage}
                     <div class="color-overlay"></div>
