@@ -32,7 +32,44 @@
             {.end}
           </div>{.end}<!-- comment the linebreak between these two elements because science
           --><label for="mobileNavToggle" class="mobile-nav-toggle-label show-on-scroll-mobile"><div class="top-bar"></div><div class="middle-bar"></div><div class="bottom-bar"></div></label><!-- comment the linebreak between these two elements because science
-          --><div id="headerNav" class="tmpl-loading" ><squarespace:navigation navigationId="mainNav" template="navigation" /></div>
+          --><div id="headerNav" class="tmpl-loading">
+    <squarespace:navigation navigationId="mainNav" template="navigation" />
+    
+    <!-- Custom Dropdown for HOME, RESTAURANT, MENU -->
+    <div class="nav-item dropdown">
+        <a href="#" class="nav-link">HOME</a>
+        <div class="dropdown-content">
+            <div class="dropdown-column">
+                <a href="/about"><img src="/images/home1.jpg" alt="Home 1" /><span>About Us</span></a>
+                <a href="/services"><img src="/images/home2.jpg" alt="Home 2" /><span>Services</span></a>
+                <a href="/contact"><img src="/images/home3.jpg" alt="Home 3" /><span>Contact</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-item dropdown">
+        <a href="#" class="nav-link">RESTAURANT</a>
+        <div class="dropdown-content">
+            <div class="dropdown-column">
+                <a href="/menu"><img src="/images/restaurant1.jpg" alt="Restaurant 1" /><span>Menu</span></a>
+                <a href="/events"><img src="/images/restaurant2.jpg" alt="Restaurant 2" /><span>Events</span></a>
+                <a href="/reservations"><img src="/images/restaurant3.jpg" alt="Restaurant 3" /><span>Reservations</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-item dropdown">
+        <a href="#" class="nav-link">MENU</a>
+        <div class="dropdown-content">
+            <div class="dropdown-column">
+                <a href="/breakfast"><img src="/images/menu1.jpg" alt="Menu 1" /><span>Breakfast</span></a>
+                <a href="/lunch"><img src="/images/menu2.jpg" alt="Menu 2" /><span>Lunch</span></a>
+                <a href="/dinner"><img src="/images/menu3.jpg" alt="Menu 3" /><span>Dinner</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
         </div>
       </header>
 
