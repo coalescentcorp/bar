@@ -36,16 +36,16 @@
     <squarespace:navigation navigationId="mainNav" template="navigation" />
     
     <!-- Custom Dropdown for HOME, RESTAURANT, MENU -->
-    <div id="headerNav" class="tmpl-loading">
     <div class="nav-item dropdown">
         <a href="#" class="nav-link">HOME</a>
         <div class="dropdown-content">
             <div class="dropdown-column">
-                <squarespace:navigation navigationId="mainNav" template="navigation" />
+                <a href="/about"><img src="/images/home1.jpg" alt="Home 1" /><span>About Us</span></a>
+                <a href="/services"><img src="/images/home2.jpg" alt="Home 2" /><span>Services</span></a>
+                <a href="/contact"><img src="/images/home3.jpg" alt="Home 3" /><span>Contact</span></a>
             </div>
         </div>
     </div>
-</div>
 
     <div class="nav-item dropdown">
     <a href="#" class="nav-link">RESTAURANT</a>
