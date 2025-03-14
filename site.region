@@ -48,15 +48,16 @@
     </div>
 
     <div class="nav-item dropdown">
-        <a href="#" class="nav-link">RESTAURANT</a>
-        <div class="dropdown-content">
-            <div class="dropdown-column">
-                <a href="/menu"><img src="/images/restaurant1.jpg" alt="Restaurant 1" /><span>Menu</span></a>
-                <a href="/events"><img src="/images/restaurant2.jpg" alt="Restaurant 2" /><span>Events</span></a>
-                <a href="/reservations"><img src="/images/restaurant3.jpg" alt="Restaurant 3" /><span>Reservations</span></a>
-            </div>
+    <a href="#" class="nav-link">RESTAURANT</a>
+    <div class="dropdown-content">
+        <div class="dropdown-column">
+            <a href="/menu"><img src="/assets/images/restaurant1.jpg" alt="Restaurant 1" /><span>Menu</span></a>
+            <a href="/events"><img src="/assets/images/restaurant2.jpg" alt="Restaurant 2" /><span>Events</span></a>
+            <a href="/reservations"><img src="/assets/images/restaurant3.jpg" alt="Restaurant 3" /><span>Reservations</span></a>
         </div>
     </div>
+</div>
+
 
     <div class="nav-item dropdown">
         <a href="#" class="nav-link">MENU</a>
