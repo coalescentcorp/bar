@@ -2,6 +2,30 @@
 /* Pacific BASE STYLES
 -------------------------------------------------*/
 
+#headerNav .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #000; /* Dropdown background */
+  border: 1px solid #fff;
+  padding: 10px;
+}
+
+#headerNav .dropdown-column a {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+#headerNav .dropdown-column img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+
+
 
 // Mixins
 .max-letter-spacing (@spacing,@max) when (@spacing > @max) {
