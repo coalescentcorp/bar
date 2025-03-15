@@ -23,31 +23,41 @@ function repeatEvents() {
 
 function getNextOccurrence(dayOfWeek) {
     const today = new Date();
-    let nextDate = new Date();
+    let nextDate = new Date(today);
 
-    // If today is past the target day, schedule for next week
-    nextDate.setDate(today.getDate() + ((dayOfWeek + 7 - today.getDay()) % 7 || 7));
+    // If today is the target day, schedule for next week
+    nextDate.setDate(today.getDate() + ((dayOfWeek - today.getDay() + 7) % 7 || 7));
     nextDate.setHours(0, 0, 0, 0);
 
     return nextDate.toDateString();
 }
 
 function createOrUpdateEvent(event) {
-    const container = document.querySelector(`.event-item[data-day="${event.day}"]`);
+    let container = document.querySelector(`.event-item[data-day="${event.day}"]`);
 
-    if (container) {
-        const titleElement = container.querySelector('.event-title');
-        const dateElement = container.querySelector('.event-date');
-        const timeElement = container.querySelector('.event-time');
-        const descriptionElement = container.querySelector('.event-description');
+    // If the container doesn't exist, create it
+    if (!container) {
+        container = document.createElement('div');
+        container.className = 'event-item';
+        container.setAttribute('data-day', event.day);
 
-        if (titleElement) titleElement.textContent = event.title;
-        if (dateElement) dateElement.textContent = event.date;
-        if (timeElement) timeElement.textContent = event.time;
-        if (descriptionElement) descriptionElement.textContent = event.description;
+        container.innerHTML = `
+            <div class="event-title"></div>
+            <div class="event-date"></div>
+            <div class="event-time"></div>
+            <div class="event-description"></div>
+        `;
 
-        container.style.display = 'block';
+        document.body.appendChild(container); // Append to the body or target container
     }
+
+    // Update the content
+    container.querySelector('.event-title').textContent = event.title;
+    container.querySelector('.event-date').textContent = event.date;
+    container.querySelector('.event-time').textContent = event.time;
+    container.querySelector('.event-description').textContent = event.description;
+
+    container.style.display = 'block';
 }
 
 function refreshEvents() {
@@ -60,7 +70,10 @@ function refreshEvents() {
 }
 
 // Load events on page load
-document.addEventListener('DOMContentLoaded', repeatEvents);
+document.addEventListener('DOMContentLoaded', () => {
+    repeatEvents();
+    console.log('Events loaded');
+});
 
 // Run the refresh every 24 hours to automate it
 setInterval(refreshEvents, 24 * 60 * 60 * 1000); // Every 24 hours
