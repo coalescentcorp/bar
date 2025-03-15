@@ -1,3 +1,21 @@
+function createOrUpdateEvent(event) {
+    const container = document.querySelector(`.event-item[data-day="${event.day}"]`);
+
+    if (container) {
+        const titleElement = container.querySelector('.event-title');
+        const dateElement = container.querySelector('.event-date');
+        const timeElement = container.querySelector('.event-time');
+        const descriptionElement = container.querySelector('.event-description');
+
+        if (titleElement) titleElement.textContent = event.title;
+        if (dateElement) dateElement.textContent = event.date;
+        if (timeElement) timeElement.textContent = event.time;
+        if (descriptionElement) descriptionElement.textContent = event.description;
+
+        container.style.display = 'block';
+    }
+}
+
 function repeatEvents(testDate = new Date()) {
     const events = [
         {
@@ -17,7 +35,7 @@ function repeatEvents(testDate = new Date()) {
     ];
 
     events.forEach(event => {
-        createOrUpdateEvent(event);
+        createOrUpdateEvent(event); // ✅ No more undefined error!
     });
 }
 
