@@ -1,7 +1,4 @@
 function repeatEvents() {
-    const today = new Date();
-    const dayOfWeek = today.getDay();
-
     const events = [
         {
             day: 5, // Friday
@@ -26,9 +23,10 @@ function repeatEvents() {
 
 function getNextOccurrence(dayOfWeek) {
     const today = new Date();
-    const nextDate = new Date();
+    let nextDate = new Date();
 
-    nextDate.setDate(today.getDate() + ((dayOfWeek + 7 - today.getDay()) % 7));
+    // If today is past the target day, schedule for next week
+    nextDate.setDate(today.getDate() + ((dayOfWeek + 7 - today.getDay()) % 7 || 7));
     nextDate.setHours(0, 0, 0, 0);
 
     return nextDate.toDateString();
@@ -52,4 +50,17 @@ function createOrUpdateEvent(event) {
     }
 }
 
+function refreshEvents() {
+    console.log('Checking for past events...');
+
+    const today = new Date();
+
+    // If the event date is in the past, update to the next occurrence
+    repeatEvents();
+}
+
+// Load events on page load
 document.addEventListener('DOMContentLoaded', repeatEvents);
+
+// Run the refresh every 24 hours to automate it
+setInterval(refreshEvents, 24 * 60 * 60 * 1000); // Every 24 hours
