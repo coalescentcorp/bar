@@ -199,5 +199,7 @@
 
     {squarespace-footers}
 
+  <!-- Load custom JavaScript -->
+  <script src="/scripts/script.js"></script>
   </body>
 </html>
